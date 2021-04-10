@@ -13,7 +13,7 @@
 function getCommonCharacterCount(s1, s2) {
   let str1;
   let str2;
-  if (s1.length >= s2.length) {
+  if (s1.length <= s2.length) {
     str1 = s1.split('');
     str2 = s2;
   } else {
