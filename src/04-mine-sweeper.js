@@ -29,11 +29,8 @@ function minesweeper(matrix) {
     for (let j = 0; j < matrix1[i].length; j++) {
       if (matrix1[i][j] === true) {
         matrix1[i][j] = 1;
-      } else if (matrix1[i][j] === false) {
-        if (arr.indexOf(true)) {
-          count = 1;
-        }
-        count = 0;
+      } else if (matrix1[i][j] === false && arr.indexOf(true) > -1) {
+        count = 1;
         if (i - 1 >= 0 && j - 1 >= 0 && matrix1[i - 1][j - 1] === true) {
           count += 1;
         }
@@ -58,6 +55,9 @@ function minesweeper(matrix) {
         if (i + 1 < matrix1.length && j + 1 < matrix1[i].length && matrix1[i + 1][j + 1] === true) {
           count += 1;
         }
+        matrix1[i][j] = count;
+      } else if (matrix1[i][j] === false) {
+        count = 0;
         matrix1[i][j] = count;
       }
     }
