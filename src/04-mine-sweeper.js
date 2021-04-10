@@ -23,13 +23,17 @@
  */
 function minesweeper(matrix) {
   const matrix1 = matrix;
-  let count = 0;
+  const arr = matrix1.join(',');
+  let count = 1;
   for (let i = 0; i < matrix1.length; i++) {
     for (let j = 0; j < matrix1[i].length; j++) {
       if (matrix1[i][j] === true) {
         matrix1[i][j] = 1;
       } else if (matrix1[i][j] === false) {
-        count = 1;
+        if (arr.indexOf(true)) {
+          count = 1;
+        }
+        count = 0;
         if (i - 1 >= 0 && j - 1 >= 0 && matrix1[i - 1][j - 1] === true) {
           count += 1;
         }
