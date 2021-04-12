@@ -10,6 +10,9 @@
  */
 function getEmailDomain(/* email */) {
   throw new Error('Not implemented');
+  // const string = email.split('').reverse();
+  // const domain = string.splice(0, string.indexOf('@')).reverse().join('');
+  // return domain;
 }
 
 module.exports = getEmailDomain;
